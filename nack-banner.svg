@@ -1,27 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-labelledby="title desc">
   <title id="title">NACK — Negative acknowledgment as a service</title>
-  <desc id="desc">A green and black terminal panel with the NACK wordmark and a simulated negative acknowledgment response.</desc>
+  <desc id="desc">A black and green terminal card with the NACK wordmark, the motto "User error until proven otherwise", a short simulated session and a black cat sitting on the terminal.</desc>
   <defs>
-    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#121c17"/><stop offset="1" stop-color="#080d0b"/></linearGradient>
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#89ff58" stroke-opacity=".045"/></pattern>
-    <style>.cursor{animation:blink 1.4s step-end infinite}@keyframes blink{50%{opacity:0}}@media(prefers-reduced-motion:reduce){.cursor{animation:none}}</style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111a15"/>
+      <stop offset="1" stop-color="#070b09"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#8bff58" stroke-opacity=".05"/>
+    </pattern>
+    <style>
+      .cursor{animation:blink 1.2s step-end infinite}
+      .eye{animation:wink 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+      @keyframes blink{50%{opacity:0}}
+      @keyframes wink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+      @media (prefers-reduced-motion:reduce){.cursor,.eye{animation:none}}
+    </style>
   </defs>
-  <rect x="1" y="1" width="958" height="298" rx="15" fill="url(#bg)" stroke="#34473b" stroke-width="2"/>
-  <rect x="2" y="43" width="956" height="255" fill="url(#grid)"/>
-  <path d="M1 43H959" stroke="#34473b"/>
-  <circle cx="23" cy="22" r="4.5" fill="#ff775e"/><circle cx="39" cy="22" r="4.5" fill="#e1b85c"/><circle cx="55" cy="22" r="4.5" fill="#8bff58"/>
-  <g font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" fill="#b2c2b8">
-    <text x="79" y="26">nack@localhost:~</text><text x="932" y="26" text-anchor="end">DEFAULT POLICY: DENY</text>
-    <text x="35" y="79" font-size="13" fill="#8bff58" letter-spacing="2">NEGATIVE ACKNOWLEDGMENT</text>
-    <text x="31" y="181" font-size="110" font-weight="bold" letter-spacing="-5" fill="#e9f6e9">NACK<tspan fill="#8bff58" font-size="69" letter-spacing="-5">&gt;_</tspan></text>
-    <text x="36" y="219" font-size="16" fill="#b2c2b8" letter-spacing="1">AS A SERVICE</text>
-    <text x="36" y="267" font-size="13" fill="#8bff58">NO REPRO. NO MERGE.</text>
-    <rect x="528" y="66" width="396" height="179" rx="8" fill="#070c09" stroke="#30483a"/>
-    <text x="548" y="92" font-size="12" fill="#81998a">// simulated session</text>
-    <text x="548" y="122" font-size="15" fill="#8bff58">$ <tspan fill="#e9f6e9">nackctl evaluate --default</tspan></text>
-    <text x="548" y="151" font-size="15" fill="#b2c2b8">[INFO] <tspan fill="#e9f6e9">assumptions rejected</tspan></text>
-    <text x="548" y="178" font-size="15" fill="#ff9c83">[NACK] <tspan fill="#e9f6e9">evidence required</tspan></text>
-    <text x="548" y="217" font-size="15" fill="#8bff58">$</text><rect class="cursor" x="568" y="203" width="9" height="17" rx="1" fill="#8bff58"/>
-    <circle cx="535" cy="264" r="4" fill="#8bff58"/><text x="548" y="268" font-size="12" fill="#b2c2b8">STATUS: RELUCTANTLY ONLINE</text>
+
+  <!-- la scheda -->
+  <rect x="1" y="1" width="958" height="298" rx="16" fill="url(#bg)" stroke="#34473b" stroke-width="2"/>
+  <rect x="2" y="44" width="956" height="254" fill="url(#grid)"/>
+  <path d="M2 44H958" stroke="#34473b"/>
+  <circle cx="24" cy="22" r="5" fill="#ff775e"/>
+  <circle cx="42" cy="22" r="5" fill="#e1b85c"/>
+  <circle cx="60" cy="22" r="5" fill="#8bff58"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace">
+    <text x="84" y="27" font-size="14" fill="#a9bbb0">nack@localhost:~</text>
+    <text x="936" y="27" font-size="14" fill="#a9bbb0" text-anchor="end">DEFAULT POLICY: DENY</text>
+
+    <!-- il marchio, grande: si legge anche sul telefono -->
+    <text x="34" y="92" font-size="15" fill="#8bff58" letter-spacing="3">NEGATIVE ACKNOWLEDGMENT</text>
+    <text x="28" y="200" font-size="118" font-weight="700" letter-spacing="-4" fill="#eef8ee">NACK<tspan fill="#8bff58" font-size="74">&gt;_</tspan></text>
+    <text x="34" y="242" font-size="18" fill="#c3d2c8">Works on my machine. Sounds like a skill issue.</text>
+    <text x="34" y="276" font-size="16" font-weight="700" fill="#8bff58" letter-spacing="1">USER ERROR UNTIL PROVEN OTHERWISE.</text>
+
+    <!-- il terminale -->
+    <rect x="560" y="122" width="370" height="148" rx="10" fill="#060a08" stroke="#30483a" stroke-width="1.5"/>
+    <text x="580" y="150" font-size="14" fill="#7f978a">// simulated session</text>
+    <text x="580" y="180" font-size="17" fill="#8bff58">$ <tspan fill="#eef8ee">nackctl review</tspan></text>
+    <text x="580" y="208" font-size="17" fill="#ff9c83">[NACK] <tspan fill="#eef8ee">no repro, no merge</tspan></text>
+    <text x="580" y="246" font-size="17" fill="#8bff58">$</text>
+    <rect class="cursor" x="600" y="231" width="10" height="19" rx="1" fill="#8bff58"/>
+  </g>
+
+  <!-- il gatto nero, seduto sul terminale: disegno originale, solo forme geometriche -->
+  <g transform="translate(0 10)">
+    <path d="M884 121 C 912 118, 926 96, 918 76 C 914 66, 904 64, 900 72" fill="none" stroke="#020403" stroke-width="9" stroke-linecap="round"/>
+    <path d="M806 122 C 802 100, 812 86, 832 84 L 860 84 C 880 86, 890 100, 886 122 Z" fill="#020403" stroke="#3d5a46" stroke-width="1.5"/>
+    <path d="M812 70 L 816 38 L 834 56 Z" fill="#020403" stroke="#3d5a46" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M880 70 L 876 38 L 858 56 Z" fill="#020403" stroke="#3d5a46" stroke-width="1.5" stroke-linejoin="round"/>
+    <ellipse cx="846" cy="70" rx="38" ry="28" fill="#020403" stroke="#3d5a46" stroke-width="1.5"/>
+    <g class="eye">
+      <ellipse cx="832" cy="68" rx="7" ry="5" fill="#8bff58"/>
+      <rect x="831" y="63" width="2" height="10" rx="1" fill="#020403"/>
+    </g>
+    <g class="eye">
+      <ellipse cx="860" cy="68" rx="7" ry="5" fill="#8bff58"/>
+      <rect x="859" y="63" width="2" height="10" rx="1" fill="#020403"/>
+    </g>
+    <path d="M843 80 L 849 80 L 846 84 Z" fill="#3d5a46"/>
   </g>
 </svg>
